@@ -1,0 +1,513 @@
+
+/* ==============================
+   GENERAL DESIGN
+============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* ==============================
+   STUDENT REGISTRATION FORM
+============================== */
+
+.form-container {
+  width: 90%;
+  max-width: 550px;
+  margin: 50px auto;
+  padding: 35px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.12);
+  border-top: 5px solid #4f46e5;
+}
+
+.form-container h1 {
+  text-align: center;
+  color: #312e81;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* FORM LAYOUT */
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-container label {
+  font-weight: bold;
+  color: #334155;
+  margin-top: 8px;
+}
+
+/* INPUT AND SELECT */
+
+.form-container input,
+.form-container select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  background: #f8fafc;
+  transition: 0.3s;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  background: #ffffff;
+}
+
+/* REGISTER BUTTON */
+
+.form-container button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-container button:hover {
+  background: linear-gradient(135deg, #3730a3, #6d28d9);
+  transform: translateY(-2px);
+}
+
+/* SUCCESS MESSAGE */
+
+.success {
+  padding: 12px;
+  margin-top: 20px;
+  background: #dcfce7;
+  color: #166534;
+  border-left: 5px solid #16a34a;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* ERROR MESSAGE */
+
+.error {
+  padding: 12px;
+  margin-top: 20px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-left: 5px solid #dc2626;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* ==============================
+   TABLET RESPONSIVENESS
+============================== */
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    width: 90%;
+    padding: 25px;
+    margin: 35px auto;
+  }
+
+  .form-container h1 {
+    font-size: 25px;
+  }
+}
+
+/* ==============================
+   MOBILE RESPONSIVENESS
+============================== */
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .form-container {
+    width: 100%;
+    margin: 15px auto;
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  .form-container h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .form-container input,
+  .form-container select {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .form-container button {
+    padding: 13px;
+    font-size: 15px;
+  }
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 5%;
+    background: linear-gradient(135deg, #312e81, #4f46e5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: white;
+    color: #4f46e5;
+}
+
+/* TABLET */
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 15px 3%;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* =================================
+   HOME DASHBOARD
+================================= */
+
+.dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.welcome-section {
+    background: linear-gradient(135deg, #312e81, #6366f1);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(49, 46, 129, 0.2);
+}
+
+.welcome-section h1 {
+    font-size: 32px;
+    margin-top: 0;
+}
+
+.welcome-section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 28px;
+    border-radius: 13px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    border-bottom: 4px solid #4f46e5;
+    transition: 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 35px;
+}
+
+.dashboard-card h3 {
+    color: #312e81;
+}
+
+.dashboard-card h2 {
+    font-size: 35px;
+    color: #4f46e5;
+}
+
+.dashboard-card p {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.register-card {
+    border-bottom-color: #16a34a;
+}
+
+.list-card {
+    border-bottom-color: #0891b2;
+}
+
+.dashboard-btn {
+    display: inline-block;
+    background: #4f46e5;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.dashboard-btn:hover {
+    background: #312e81;
+}
+
+.dashboard-footer {
+    text-align: center;
+    margin-top: 45px;
+    color: #64748b;
+}
+
+/* =================================
+   STUDENTS LIST
+================================= */
+
+.students-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.students-header {
+    background: linear-gradient(135deg, #312e81, #6366f1);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.students-header h1 {
+    margin-top: 0;
+}
+
+.students-summary {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    border-left: 5px solid #4f46e5;
+}
+
+.students-summary h3 {
+    color: #475569;
+}
+
+.students-summary h2 {
+    font-size: 32px;
+    color: #4f46e5;
+}
+
+.students-table-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.table-heading h2 {
+    color: #312e81;
+}
+
+.search-input {
+    padding: 12px;
+    width: 300px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #4f46e5;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+.students-table th {
+    background: #312e81;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.students-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.students-table tbody tr:hover {
+    background: #eef2ff;
+}
+
+.course-badge {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.no-students {
+    text-align: center;
+    color: #64748b;
+    padding: 25px;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media screen and (max-width: 768px) {
+    .dashboard,
+    .students-container {
+        width: 95%;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .table-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dashboard,
+    .students-container {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .welcome-section {
+        padding: 25px 18px;
+    }
+
+    .welcome-section h1 {
+        font-size: 23px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .dashboard-card {
+        padding: 20px;
+    }
+
+    .students-header {
+        padding: 22px 16px;
+    }
+
+    .students-header h1 {
+        font-size: 23px;
+    }
+
+    .students-table-section {
+        padding: 15px;
+    }
+
+    .students-summary h2 {
+        font-size: 27px;
+    }
+}
