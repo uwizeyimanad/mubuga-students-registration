@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks</title>
+</head>
+<body>
+
+<script>
+let firstname = prompt("Enter your first name");
+let lastname = prompt("Enter your last name");
+let marks = prompt("Enter your marks");
+let studentclass = prompt("Enter your class");
+
+let fullname = firstname + " " + lastname;
+
+document.write("Your fullname is: " + fullname + "<br>");
+document.write("The fullname is: " + fullname.toUpperCase() + "<br>");
+document.write("Your marks are: " + marks + "<br>");
+document.write("Your class is: " + studentclass + "<br>");
+
+let grade = "a";
+
+if (grade == "a") {
+    document.write("Excellent");
+}
+else if (grade == "b") {
+    document.write("Very good");
+}
+else if (grade == "c") {
+    document.write("Good");
+}
+else if (grade == "d") {
+    document.write("Satisfactory");
+}
+else if (grade == "f") {
+    document.write("Fail");
+}
+else {
+    document.write("Invalid grade");
+}
+
+document.write("<br>");
+
+switch (studentclass.toLowerCase()) {
+    case "a":
+        document.write("Excellent");
+        break;
+
+    case "b":
+        document.write("Very good");
+        break;
+
+    case "c":
+        document.write("Good");
+        break;
+
+    case "d":
+        document.write("Satisfactory");
+        break;
+
+    case "f":
+        document.write("Fail");
+        break;
+
+    default:
+        document.write("Invalid class");
+}
+</script>
+
+</body>
+</html>

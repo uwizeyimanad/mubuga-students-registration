@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 
 function StudentsList() {
@@ -80,15 +81,20 @@ function StudentsList() {
                                         <td>{student.id}</td>
                                         <td>{student.full_name}</td>
                                         <td>{student.age}</td>
+
                                         <td>
                                             <span className="course-badge">
                                                 {student.course}
                                             </span>
                                         </td>
+
+                                        {/* Registration Date */}
                                         <td>
-                                            {new Date(
-                                                student.created_at
-                                            ).toLocaleDateString()}
+                                            {student.registration_date
+                                                ? new Date(
+                                                    student.registration_date.replace(" ", "T")
+                                                ).toLocaleString()
+                                                : "No Date"}
                                         </td>
                                     </tr>
                                 ))}
